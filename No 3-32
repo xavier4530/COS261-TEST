@@ -107,3 +107,212 @@ Avoid long methods
 Improves readability
 Easier debugging and testing
 Encourages code reuse through modular design
+
+
+16. Naming Conventions in Java:
+
+Classes: Use PascalCase. E.g., StudentDetails
+
+Variables: Use camelCase. E.g., studentName
+
+Methods: Use camelCase. E.g., calculateAverage()
+
+
+public class StudentDetails {
+    String studentName;
+    int studentAge;
+
+    public void displayDetails() {
+        System.out.println(studentName + " " + studentAge);
+    }
+}
+
+17. Importance of Breaking Java Program into Methods:
+
+Enhances modularity
+
+Improves readability
+
+Facilitates reuse
+
+Simplifies debugging and maintenance
+
+
+18. DRY Concept in Java:
+
+Avoid code duplication by reusing methods.
+
+
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public void displaySum() {
+        int result = add(5, 10);
+        System.out.println("Sum: " + result);
+    }
+}
+
+19. Benefits of Using Classes and Objects:
+
+Encapsulation of data and methods
+
+Promotes code reusability
+
+Improves readability and organization
+
+Facilitates debugging and testing
+
+
+Testing & Debugging
+
+20. Importance of Testing:
+
+Ensures correctness and reliability
+
+Helps identify and fix bugs early
+
+Prevents regression issues
+
+
+21. Syntax vs Runtime vs Logic Errors:
+
+Syntax Error: Compilation error due to incorrect code format.
+
+Runtime Error: Error during program execution (e.g., divide by zero).
+
+Logic Error: Incorrect output due to flawed logic.
+
+
+22. Testing Average Method:
+
+public double calculateAverage(int[] nums) {
+    int sum = 0;
+    for (int num : nums) sum += num;
+    return (double) sum / nums.length;
+}
+
+int[] values = {10, 20, 30, 40, 50};
+System.out.println("Average: " + calculateAverage(values));
+
+Documentation & Comments
+
+23. Why Write Comments:
+
+Improves code readability
+
+Helps future maintenance
+
+Assists team collaboration
+
+
+24. JavaDoc Comments:
+
+JavaDoc is a tool for generating documentation from comments
+
+Regular comments don’t generate documentation
+
+
+/**
+ * This class performs math operations.
+ */
+
+25. Java Method with JavaDoc:
+
+/**
+ * Calculates the square of a number.
+ * @param number input integer
+ * @return square of the number
+ */
+public int square(int number) {
+    return number * number;
+}
+
+Versioning & Collaboration
+
+26. Version Control Importance:
+
+Tracks changes
+
+Facilitates collaboration
+
+Allows rollback and history
+
+
+27. Explaining Code Refactoring:
+
+Improving code structure without changing behavior
+
+Makes code cleaner and more efficient
+
+
+28. Tools for Collaboration:
+
+Git & GitHub: Version control and repository management
+
+JIRA: Task and issue tracking
+
+Slack: Communication
+
+
+Good Practices Summary
+
+29. 5 Best Practices:
+
+Follow naming conventions
+
+Write modular code
+
+Add meaningful comments
+
+Use version control
+
+Test thoroughly
+
+
+30. Code Readability vs Smart Code:
+
+Readable code is easier to maintain, debug, and understand
+
+Smart code may be complex and hard to manage
+
+
+Advanced-Level Questions
+
+31. Student Grade Tracker (CLI App):
+
+Use Java classes to represent students and grades
+
+Provide menu options for adding, updating, viewing records
+
+
+32. ATM System Simulation:
+
+import java.util.Scanner;
+
+public class ATM {
+    static double balance = 1000;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("1. Check Balance\n2. Deposit\n3. Withdraw\n4. Exit");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1: System.out.println("Balance: " + balance); break;
+                case 2:
+                    System.out.print("Enter deposit amount: ");
+                    balance += scanner.nextDouble(); break;
+                case 3:
+                    System.out.print("Enter withdraw amount: ");
+                    double amount = scanner.nextDouble();
+                    if (amount <= balance) balance -= amount;
+                    else System.out.println("Insufficient funds");
+                    break;
+                case 4: System.exit(0);
+                default: System.out.println("Invalid choice");
+            }
+        }
+    }
+}
