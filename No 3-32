@@ -1,0 +1,109 @@
+3. Use of main method
+The main method is the entry point of any Java application.
+It tells the JVM where to start executing the program.
+
+4. Add two numbers entered by the user
+import java.util.Scanner;
+public class AddNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = input.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = input.nextInt();
+        int sum = num1 + num2;
+        System.out.println("Sum: " + sum);
+    }
+}
+
+5. Difference between int, Integer, and String
+int: primitive type
+Integer: wrapper class for int (Object)
+String: class to represent a sequence of characters
+
+Control Structures
+
+6. Check if a number is even or odd
+int num = 5;
+if (num % 2 == 0) {
+    System.out.println("Even");
+} else {
+    System.out.println("Odd");
+}
+
+7. Find the largest among three numbers
+int a = 10, b = 25, c = 15;
+int largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
+System.out.println("Largest: " + largest);
+
+8. Difference between while, for, do-while
+while: entry-controlled loop
+for: concise loop with init, condition, update in one line
+do-while: exit-controlled loop, runs at least once
+
+9. Multiplication table of any number
+int n = 5;
+for (int i = 1; i <= 10; i++) {
+    System.out.println(n + " x " + i + " = " + (n * i));
+}
+
+10. Four pillars of OOP
+Encapsulation: bundling data and methods
+Inheritance: acquiring properties from another class
+Polymorphism: same method behaving differently
+Abstraction: hiding details and showing essentials
+
+11. Student class
+class Student {
+    String name;
+    String matricNo;
+    double score;
+
+    void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Matric No: " + matricNo);
+        System.out.println("Score: " + score);
+    }
+}
+
+12. Method Overloading
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+13. Inheritance
+class Person {
+    String name;
+    int age;
+
+    void introduce() {
+        System.out.println("Hi, I am " + name);
+    }
+}
+
+class Teacher extends Person {
+    String subject;
+
+    void teach() {
+        System.out.println("I teach " + subject);
+    }
+}
+
+General Practices
+
+14. Clean code: readable, maintainable, and efficient
+Practices:
+Use meaningful variable names
+Keep methods short and focused
+Write comments and follow naming conventions
+
+Avoid long methods
+Improves readability
+Easier debugging and testing
+Encourages code reuse through modular design
